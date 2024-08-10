@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 const db = require('./db');
+require('dotenv').config();
 const Ps = require('./SC');
+const port = process.env.port || 3000;
 
 const bodyParser = require('body-parser');
 const { error } = require('console');
@@ -82,5 +84,6 @@ app.delete('/:id', async(req, res) => {
     }
 })
  
-
-app.listen(3000);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});

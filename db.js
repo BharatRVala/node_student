@@ -1,6 +1,7 @@
 const mngoose = require('mongoose');
+require('dotenv').config();
 
-const url="mongodb+srv://bharat:bharat@cluster0.kqpz9z8.mongodb.net/studd"
+const url=process.env.db_url;
 
 mngoose.connect(url,{
     useNewUrlParser:true,
